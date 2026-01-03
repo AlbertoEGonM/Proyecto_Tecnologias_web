@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Pila</title>
+    <link rel="stylesheet" href="style/style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Visualización de Estructuras de Datos</h1>
+        <nav>
+            <a href="#" class="active">Pila</a> |
+            <a href="cola.html">Cola</a> |
+            <a href="lista_enlazada.html">Lista Simplemente Enlazada</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>PILA (LIFO)</h2>
+
+        <div class="opciones-estructura">
+            <button onclick="crearPilaNueva()">Crear Nueva Pila</button>
+            <button onclick="cargarPila()">Cargar Pila Guardada</button>
+            <button onclick="guardarPila()">Guardar Pila</button> </div>
+
+        <hr>
+
+        <div class="container">
+            <section id="operaciones">
+                <h3>Operaciones (push y pop)</h3>
+                
+                <div class="control-group">
+                    <input type="number" id="valor-insertar" placeholder="Elemento a insertar">
+                    <button onclick="ejecutarPush()">Insertar (push)</button> </div>
+
+                <div class="control-group">
+                    <button onclick="ejecutarPop()">Sacar (pop)</button> </div>
+            </section>
+
+            <section>
+                <h3>Visualización </h3>
+                <div id="pila-visual">
+                    </div>
+                <div class="etiquetas">
+                    <span>Inicio (Fondo)</span>
+                    <span>Fin (Cima)</span>
+                </div>
+            </section>
+
+            <section>
+                <h3>Código en Lenguaje C </h3>
+                <pre id="codigo-c-display">
+                    // El código C de la operación (push/pop) se mostrará aquí.
+                </pre>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/pila.js"></script>
+</body>
+</html>

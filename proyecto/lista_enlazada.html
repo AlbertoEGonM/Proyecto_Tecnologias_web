@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Simplemente Enlazada</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Visualización de Estructuras de Datos</h1>
+        <nav>
+            <a href="index.html">Pila</a> |
+            <a href="cola.html">Cola</a> |
+            <a href="lista.html" class="active">Lista Simplemente Enlazada</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>LISTA SIMPLEMENTE ENLAZADA</h2>
+
+        <div class="opciones-estructura">
+            <button onclick="crearListaNueva()">Crear Nueva Lista</button>
+            <button onclick="cargarLista()">Cargar Lista Guardada</button>
+            <button onclick="guardarLista()">Guardar Lista</button>
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <section id="operaciones-lista">
+                <h3>Controles de Operación</h3>
+                
+                <div class="control-group">
+                    <input type="number" id="valor-lista" placeholder="Valor (Dato)">
+                    <input type="number" id="posicion-lista" placeholder="Posición (idx)" min="0">
+                </div>
+
+                <div class="control-box">
+                    <h4>Insertar</h4>
+                    <button onclick="insertarInicio()">Inicio</button>
+                    <button onclick="insertarFinal()">Final</button>
+                    <button onclick="insertarPosicion()">En Posición</button>
+                </div>
+
+                <div class="control-box">
+                    <h4>Eliminar</h4>
+                    <button onclick="eliminarInicio()" class="btn-danger">Inicio</button>
+                    <button onclick="eliminarFinal()" class="btn-danger">Final</button>
+                    <button onclick="eliminarPosicion()" class="btn-danger">De Posición</button>
+                    <button onclick="eliminarValor()" class="btn-danger">Por Valor</button>
+                </div>
+            </section>
+
+            <section class="visual-section">
+                <h3>Visualización Gráfica</h3>
+                <div id="lista-visual">
+                    </div>
+                <div class="etiquetas">
+                    <span>Cabeza (Head)</span>
+                    <span>Cola (Tail)</span>
+                </div>
+            </section>
+
+            <section>
+                <h3>Código en Lenguaje C</h3>
+                <pre id="codigo-c-lista">
+// Selecciona una operación para ver su código
+                </pre>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/lista.js"></script>
+</body>
+</html>

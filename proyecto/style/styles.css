@@ -1,0 +1,232 @@
+
+/* --- Estilos Generales --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #451983;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffd700;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+section {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    flex: 1;
+}
+
+/* --- Estilos de la Pila --- */
+#pila-visual {
+    /* La clave para la visualización de la Pila: */
+    display: flex;
+    flex-direction: column-reverse; /* Apilar de abajo hacia arriba [cite: 12] */
+    align-items: center;
+    border: 3px solid #666;
+    min-height: 300px;
+    width: 150px;
+    margin: 10px auto;
+    background-color: #e0e0e0;
+}
+
+.elemento-pila {
+    width: 100px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px 0;
+    border: 1px solid #0056b3;
+    /* Los elementos se representan en un cuadrado [cite: 13] */
+    box-sizing: border-box; 
+    
+    /* Propiedad de transición para la animación (usada en JS) */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+}
+
+.etiquetas {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    margin: 5px auto 0;
+    font-size: 0.9em;
+}
+
+/* --- Estilos de Código C --- */
+#codigo-c-display {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    white-space: pre-wrap; /* Permite saltos de línea en el código C */
+}
+
+/* --- Estilos de Botones y Formularios --- */
+.control-group, .opciones-estructura {
+    margin-bottom: 15px;
+}
+
+input[type="number"], button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    cursor: pointer;
+    background-color: #8d195b;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+/* --- Estilos Específicos de la Cola --- */
+#cola-visual {
+    display: flex;
+    flex-direction: row; /* Elementos horizontales de izquierda a derecha  */
+    align-items: center;
+    border: 3px solid #666;
+    min-height: 100px;
+    width: 90%; /* Más ancho para permitir crecimiento horizontal */
+    margin: 10px auto;
+    background-color: #e0e0e0;
+    padding: 10px;
+    overflow-x: auto; /* Scroll si se llena */
+}
+
+/* Reutilizamos .elemento-pila pero podemos añadir margen lateral */
+.elemento-cola {
+    width: 60px;
+    height: 60px;
+    background-color: #28a745; /* Color diferente para distinguir (verde) */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px; /* Separación horizontal */
+    border: 1px solid #1e7e34;
+    transition: all 0.5s ease;
+    /* Los elementos se representan en un cuadrado [cite: 28] */
+}
+
+.codigo-c-cola{
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    white-space: pre-wrap; /* Permite saltos de línea en el código C */
+}
+/* --- Estilos para la Lista Enlazada --- */
+
+/* Contenedor flexible horizontal */
+#lista-visual {
+    display: flex;
+    flex-direction: row; /* Izquierda a derecha [cite: 39] */
+    align-items: center;
+    border: 3px solid #666;
+    min-height: 120px;
+    width: 95%;
+    margin: 10px auto;
+    background-color: #e0e0e0;
+    padding: 20px;
+    overflow-x: auto; /* Scroll horizontal si la lista es larga */
+    gap: 0; /* El espacio lo manejamos con márgenes para las flechas */
+}
+
+/* El Nodo visual */
+.nodo-lista {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    transition: all 0.5s ease;
+}
+
+/* La caja del dato (Cuadrado) */
+.nodo-dato {
+    width: 60px;
+    height: 60px;
+    background-color: #9c27b0; /* Morado para diferenciar */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #7b1fa2;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* La flecha (puntero al siguiente) */
+.nodo-flecha {
+    width: 40px;
+    height: 4px;
+    background-color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+/* Punta de la flecha usando CSS puro */
+.nodo-flecha::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: -8px;
+    border-left: 10px solid #333;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/* El último nodo apunta a NULL (flecha diferente o texto) */
+.nodo-null {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #555;
+    margin-left: 5px;
+}
+
+/* Botones de eliminar color rojo para distinguir */
+.btn-danger {
+    background-color: #d32f2f;
+}
+.btn-danger:hover {
+    background-color: #b71c1c;
+}
+
+.control-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}

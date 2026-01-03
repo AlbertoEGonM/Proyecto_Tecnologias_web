@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cola</title>
+    <link rel="stylesheet" href="style/style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Visualización de Estructuras de Datos</h1>
+        <nav>
+            <a href="index.html">Pila</a> |
+            <a href="cola.html" class="active">Cola</a> |
+            <a href="lista_enlazada.html">Lista Simplemente Enlazada</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>COLA (FIFO)</h2>
+
+        <div class="opciones-estructura">
+            <button onclick="crearColaNueva()">Crear Nueva Cola</button>
+            <button onclick="cargarCola()">Cargar Cola Guardada</button>
+            <button onclick="guardarCola()">Guardar Cola</button> 
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <section id="operaciones">
+                <h3>Operaciones</h3>
+                
+                <div class="control-group">
+                    <input type="number" id="valor-cola" placeholder="Elemento a insertar">
+                    <button onclick="ejecutarEnqueue()">Insertar (Enqueue)</button> 
+                </div>
+
+                <div class="control-group">
+                    <button onclick="ejecutarDequeue()">Sacar (Dequeue)</button> 
+                </div>
+            </section>
+
+            <section>
+                <h3>Visualización</h3>
+                <div id="cola-visual">
+                    </div>
+                
+                <div class="etiquetas">
+                    <span>Frente (Inicio)</span>
+                    <span>Final (Cola)</span>
+                </div>
+            </section>
+
+            <section>
+                <h3>Código en Lenguaje C</h3>
+                <pre id="codigo-c-cola">
+                    // Aquí aparecerá el código C correspondiente a la operación
+                    // enqueue o dequeue cuando presiones los botones.
+                </pre>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/cola.js"></script>
+</body>
+</html>
